@@ -16,10 +16,15 @@
     // create an instance of the base class
     $f3 = Base::instance();
 
+    // Turn on Fat-free error reporting
+    $f3->set('DEBUG', 3);
+
     // define a default route
     $f3->route('GET /', function()
     {
-        echo '<h1>Hola!</h1>';
+        //echo '<h1>Hola!</h1>';
+        $view = new Template();
+        echo $view->render('views/home2.html');
     });
 
     // Run Fat-Free
